@@ -169,17 +169,21 @@ class UserList extends StatelessWidget {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(20)),
-                                    child: CachedNetworkImage(
-                                      imageUrl: user.avatar,
-                                      fit: BoxFit.cover,
-                                      errorWidget: (context, url, error) =>
-                                          const Icon(
-                                        Icons.error_outline,
-                                        color: black,
-                                        size: 26,
+                                  SizedBox(
+                                    height: 102,
+                                    width: 102,
+                                    child: ClipRRect(
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20)),
+                                      child: CachedNetworkImage(
+                                        imageUrl: user.avatar,
+                                        fit: BoxFit.cover,
+                                        errorWidget: (context, url, error) =>
+                                            const Icon(
+                                          Icons.error_outline,
+                                          color: black,
+                                          size: 26,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -322,62 +326,60 @@ class UserList extends StatelessWidget {
         ),
       ),
       builder: (BuildContext context) {
-        return SafeArea(
-          child: Wrap(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 22.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Are you sure?',
-                      style: GoogleFonts.sen(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w400,
-                          color: black1),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 24.0, right: 24.0, top: 30.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 62,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            userBloc.add(DeleteUser(userId: userId));
-                            Navigator.of(context).pop();
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      SuccessfullScreen('delete')),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: primary,
-                            foregroundColor: black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  12.0), // rounded corners
-                            ),
+        return Wrap(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 22.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Are you sure?',
+                    style: GoogleFonts.sen(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w400,
+                        color: black1),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 24.0, right: 24.0, bottom: 30.0, top: 30.0),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 62,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          userBloc.add(DeleteUser(userId: userId));
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    SuccessfullScreen('delete')),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primary,
+                          foregroundColor: black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(12.0), // rounded corners
                           ),
-                          child: Text(
-                            'DELETE NOW',
-                            style: GoogleFonts.sen(
-                              textStyle: const TextStyle(
-                                  color: white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700),
-                            ),
+                        ),
+                        child: Text(
+                          'DELETE NOW',
+                          style: GoogleFonts.sen(
+                            textStyle: const TextStyle(
+                                color: white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700),
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );
@@ -451,17 +453,21 @@ class SelectedUserList extends StatelessWidget {
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(20)),
-                                    child: CachedNetworkImage(
-                                      imageUrl: user.avatar,
-                                      fit: BoxFit.cover,
-                                      errorWidget: (context, url, error) =>
-                                          const Icon(
-                                        Icons.error_outline,
-                                        color: black,
-                                        size: 26,
+                                  SizedBox(
+                                    height: 102,
+                                    width: 102,
+                                    child: ClipRRect(
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(20)),
+                                      child: CachedNetworkImage(
+                                        imageUrl: user.avatar,
+                                        fit: BoxFit.cover,
+                                        errorWidget: (context, url, error) =>
+                                            const Icon(
+                                          Icons.error_outline,
+                                          color: black,
+                                          size: 26,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -582,62 +588,64 @@ class SelectedUserList extends StatelessWidget {
         ),
       ),
       builder: (BuildContext context) {
-        return SafeArea(
-          child: Wrap(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 22.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Are you sure?',
-                      style: GoogleFonts.sen(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w400,
-                          color: black1),
+        return Wrap(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 22.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Are you sure?',
+                    style: GoogleFonts.sen(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w400,
+                        color: black1),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 24.0,
+                      right: 24.0,
+                      top: 30.0,
+                      bottom: 24.0,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 24.0, right: 24.0, top: 30.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 62,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            userBloc.add(DeleteUser(userId: userId));
-                            Navigator.of(context).pop();
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      SuccessfullScreen('delete')),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: primary,
-                            foregroundColor: black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                  12.0), // rounded corners
-                            ),
+                    child: SizedBox(
+                      width: double.infinity,
+                      height: 62,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          userBloc.add(DeleteUser(userId: userId));
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    SuccessfullScreen('delete')),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primary,
+                          foregroundColor: black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(12.0), // rounded corners
                           ),
-                          child: Text(
-                            'DELETE NOW',
-                            style: GoogleFonts.sen(
-                              textStyle: const TextStyle(
-                                  color: white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700),
-                            ),
+                        ),
+                        child: Text(
+                          'DELETE NOW',
+                          style: GoogleFonts.sen(
+                            textStyle: const TextStyle(
+                                color: white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700),
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );

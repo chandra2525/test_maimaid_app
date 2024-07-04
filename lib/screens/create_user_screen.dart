@@ -196,44 +196,42 @@ class CreateUserScreen extends StatelessWidget {
           }),
         ),
       ),
-      bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 24.0, right: 24.0),
-          child: SizedBox(
-            width: double.infinity,
-            height: 62,
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  context.read<UserBloc>().add(CreateUser(
-                        name: nameController.text,
-                        job: selectedJob!,
-                      ));
-                }
-                // if (nameController.text.isNotEmpty && selectedJob != null) {
-                //   context.read<UserBloc>().add(CreateUser(
-                //         name: nameController.text,
-                //         job: selectedJob!,
-                //       ));
-                // } else {
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     const SnackBar(content: Text('Please fill in all fields')),
-                //   );
-                // }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: primary,
-                foregroundColor: black,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0), // rounded corners
-                ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(left: 24.0, right: 24.0, bottom: 34.0),
+        child: SizedBox(
+          width: double.infinity,
+          height: 62,
+          child: ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                context.read<UserBloc>().add(CreateUser(
+                      name: nameController.text,
+                      job: selectedJob!,
+                    ));
+              }
+              // if (nameController.text.isNotEmpty && selectedJob != null) {
+              //   context.read<UserBloc>().add(CreateUser(
+              //         name: nameController.text,
+              //         job: selectedJob!,
+              //       ));
+              // } else {
+              //   ScaffoldMessenger.of(context).showSnackBar(
+              //     const SnackBar(content: Text('Please fill in all fields')),
+              //   );
+              // }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: primary,
+              foregroundColor: black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0), // rounded corners
               ),
-              child: Text(
-                'CREATE',
-                style: GoogleFonts.sen(
-                  textStyle: const TextStyle(
-                      color: white, fontSize: 16, fontWeight: FontWeight.w700),
-                ),
+            ),
+            child: Text(
+              'CREATE',
+              style: GoogleFonts.sen(
+                textStyle: const TextStyle(
+                    color: white, fontSize: 16, fontWeight: FontWeight.w700),
               ),
             ),
           ),

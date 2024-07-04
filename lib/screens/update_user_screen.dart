@@ -179,7 +179,8 @@ class UserDetailForm extends StatelessWidget {
     }
 
     return Padding(
-      padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 24.0),
+      padding: const EdgeInsets.only(
+          left: 24.0, right: 24.0, top: 24.0, bottom: 34.0),
       child: Form(
         key: _formKey,
         child: Column(
@@ -298,36 +299,34 @@ class UserDetailForm extends StatelessWidget {
                 ),
               ],
             ),
-            SafeArea(
-              child: SizedBox(
-                width: double.infinity,
-                height: 62,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      context.read<UserBloc>().add(UpdateUser(
-                            id: user.id,
-                            name: nameController.text,
-                            job: jobController.text,
-                          ));
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primary,
-                    foregroundColor: black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(12.0), // rounded corners
-                    ),
+            SizedBox(
+              width: double.infinity,
+              height: 62,
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    context.read<UserBloc>().add(UpdateUser(
+                          id: user.id,
+                          name: nameController.text,
+                          job: jobController.text,
+                        ));
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: primary,
+                  foregroundColor: black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(12.0), // rounded corners
                   ),
-                  child: Text(
-                    'UPDATE',
-                    style: GoogleFonts.sen(
-                      textStyle: const TextStyle(
-                          color: white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700),
-                    ),
+                ),
+                child: Text(
+                  'UPDATE',
+                  style: GoogleFonts.sen(
+                    textStyle: const TextStyle(
+                        color: white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700),
                   ),
                 ),
               ),
